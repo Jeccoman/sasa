@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>SasaRide - Move sasa</title>
+  <meta name="description" content="Boda, Bajaji or car across Tanzania. Book in the SasaRide app, or by SMS on 15962 with no internet." />
+  <meta name="theme-color" content="#0D4A9B" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="/img/car_top.webp" as="image" />
+  <link rel="preload" href="/fonts/Urbanist-Bold.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <div class="loader" aria-hidden="true">
+    <img class="loader__logo" src="/img/sasaride-wordmark-white.webp" alt="" width="377" height="127" />
+    <div class="loader__bar"><span></span></div>
+    <div class="loader__count"><span class="loader__num">0</span>%</div>
+  </div>
+
+  <header class="nav">
+    <a href="#top" class="nav__logo" aria-label="SasaRide home">
+      <img class="nav__logo-dark" src="/img/sasaride-wordmark.webp" alt="SasaRide" width="600" height="142" />
+      <img class="nav__logo-light" src="/img/sasaride-wordmark-white.webp" alt="" width="377" height="127" />
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#route">How it works</a>
+      <a href="#swoop">Rides</a>
+      <a href="#eve">Book by SMS</a>
+      <a href="#drive">Drive with us</a>
+    </nav>
+    <a href="#download" class="btn btn--sm btn--blue magnetic"><span>Get the app</span></a>
+  </header>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main id="top">
+
+        <section id="route" class="route">
+          <div class="route__map" aria-hidden="true"></div>
+
+          <svg class="route__svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="trail" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1D6FE0" />
+                <stop offset="1" stop-color="#0D4A9B" />
+              </linearGradient>
+              <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="6" />
+              </filter>
+            </defs>
+            <path class="route__ghost" />
+            <path class="route__glow" filter="url(#glow)" />
+            <path class="route__trail" />
+            <g class="route__stops"></g>
+          </svg>
+
+          <div class="hero">
+            <p class="eyebrow hero__eyebrow"><span class="dot"></span> Now riding across Tanzania</p>
+            <h1 class="hero__title">
+              <span class="hero__line">Move</span>
+              <span class="hero__line hero__line--blue">sasa.</span>
+            </h1>
+            <p class="hero__lead">Boda, Bajaji or car. Tap once and a nearby driver is on the way. Scroll to take the ride.</p>
+            <div class="hero__ctas">
+              <a class="btn btn--blue magnetic" href="https://apps.apple.com/tz/app/sasaride/id6749956540" target="_blank" rel="noopener">
+                <span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.6-1-2.6-4.1zM13.9 4.9c.7-.9 1.2-2 1.1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.1.1 2.3-.6 3-1.5z"/></svg>App Store</span>
+              </a>
+              <a class="btn btn--ghost magnetic" href="https://play.google.com/store/apps/details?id=co.tz.sasaride" target="_blank" rel="noopener">
+                <span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3.6 1.8c-.3.3-.4.7-.4 1.3v17.8c0 .6.1 1 .4 1.3l10-10.2-10-10.2zm11.4 11.6 2.8 2.8-11.9 6.8c-.5.3-1 .3-1.3.1l10.4-9.7zm0-2.8L4.6 1c.3-.2.8-.2 1.3.1L17.8 8l-2.8 2.6zm3.9-1.9 3 1.7c.9.5.9 1.3 0 1.8l-3 1.7-3-3 3-2.2z"/></svg>Google Play</span>
+              </a>
+              <p class="hero__sms">No smartphone? Text <a href="sms:15962">15962</a> to book by SMS.</p>
+            </div>
+          </div>
+
+          <div class="pickup" aria-hidden="true">
+            <span class="pickup__ring"></span>
+            <span class="pickup__label">Pickup · Kariakoo</span>
+          </div>
+
+          <div class="step" data-side="left">
+            <span class="step__num">01</span>
+            <p class="step__place">Upanga</p>
+            <h2 class="step__title">Drop a pin. Done.</h2>
+            <p class="step__body">Type a place or tap the map. SasaRide finds the drivers closest to you and shows the fare before you book.</p>
+          </div>
+
+          <div class="step" data-side="right">
+            <span class="step__num">02</span>
+            <p class="step__place">Selander Bridge</p>
+            <h2 class="step__title">Matched in moments.</h2>
+            <p class="step__body">A verified driver accepts and heads your way. Watch them move on the map, minute by minute.</p>
+          </div>
+
+          <div class="step" data-side="left">
+            <span class="step__num">03</span>
+            <p class="step__place">Oyster Bay</p>
+            <h2 class="step__title">Ride. Pay your way.</h2>
+            <p class="step__body">M-Pesa, Tigo Pesa or cash. Share your trip with someone you trust and keep an emergency contact one tap away.</p>
+          </div>
+
+          <div class="arrive">
+            <div class="arrive__pin" aria-hidden="true"><span></span></div>
+            <p class="arrive__text">Masaki. <em>You've arrived.</em></p>
+          </div>
+
+          <div class="car" aria-hidden="true">
+            <img src="/img/car_top.webp" alt="" width="512" height="512" />
+          </div>
+          <div class="eta" aria-hidden="true"><span class="eta__dot"></span><span class="eta__text">Driver on the way</span></div>
+        </section>
+
+        <section id="swoop" class="swoop">
+          <div class="swoop__stage">
+            <div class="swoop__veil" aria-hidden="true"></div>
+            <p class="swoop__intro">From up here, every trip<br />is just a line on a map.</p>
+
+            <img class="swoop__fallback" src="/img/sasa_car.webp" alt="SasaRide car" width="1024" height="1024" />
+
+            <div class="swoop__slides">
+              <div class="swoop__slide">
+                <p class="swoop__kicker">Sasa · Mid-size cars</p>
+                <h2 class="swoop__words"><span class="w">Up close,</span><span class="w">it's all</span><span class="w w--blue">yours.</span></h2>
+              </div>
+              <div class="swoop__slide">
+                <p class="swoop__kicker">Boda · 2-wheel rides</p>
+                <h2 class="swoop__words"><span class="w">Running</span><span class="w">late? Take</span><span class="w w--blue">a Boda.</span></h2>
+              </div>
+              <div class="swoop__slide">
+                <p class="swoop__kicker">Bajaji · 3-wheel rides</p>
+                <h2 class="swoop__words"><span class="w">Short hop,</span><span class="w">door to</span><span class="w w--blue">door.</span></h2>
+              </div>
+              <div class="swoop__slide">
+                <p class="swoop__kicker">Taxi XL · Large cars</p>
+                <h2 class="swoop__words"><span class="w">Bring the</span><span class="w">whole</span><span class="w w--blue">crew.</span></h2>
+              </div>
+              <div class="swoop__slide">
+                <p class="swoop__kicker">Kirikuu · Send items</p>
+                <h2 class="swoop__words"><span class="w">Not a ride?</span><span class="w">Send it</span><span class="w w--blue">sasa.</span></h2>
+              </div>
+            </div>
+
+            <ul class="swoop__facts">
+              <li><strong>Verified</strong><span>Every driver checked before their first trip</span></li>
+              <li><strong>Upfront</strong><span>See the fare before you confirm</span></li>
+              <li><strong>Shared</strong><span>Send your live trip to family</span></li>
+            </ul>
+
+            <ol class="swoop__modes" aria-hidden="true">
+              <li>Sasa</li><li>Boda</li><li>Bajaji</li><li>Taxi XL</li><li>Kirikuu</li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="eve" class="eve">
+          <div class="eve__copy">
+            <p class="eyebrow eyebrow--light"><span class="dot"></span> No data? No problem.</p>
+            <h2 class="eve__title"><span class="l">Just text</span><span class="l l--sun">15962.</span></h2>
+            <p class="eve__lead">Meet Eve, SasaRide's booking assistant. Book a ride by SMS from any phone, on any network - in Kiswahili or English, day or night.</p>
+            <ul class="eve__points">
+              <li><strong>Any phone</strong><span>Smartphone or kitochi. No app, no internet.</span></li>
+              <li><strong>Your language</strong><span>Kiswahili or English, the way you talk.</span></li>
+              <li><strong>24/7</strong><span>Eve answers at 3 am too.</span></li>
+            </ul>
+            <a class="btn btn--white magnetic" href="sms:15962"><span>Text 15962</span></a>
+          </div>
+          <div class="eve__device">
+            <div class="eve__phone" role="img" aria-label="Example SMS conversation booking a Boda with Eve on 15962">
+              <div class="eve__screen">
+                <div class="eve__bar"><i>E</i><b>Eve · SasaRide</b><span>15962</span></div>
+                <div class="eve__thread"><div class="eve__inner" aria-hidden="true">
+                  <p class="msg msg--me">Habari Eve, nahitaji usafiri</p>
+                  <p class="msg msg--eve">Karibu! Where should we pick you up?</p>
+                  <p class="msg msg--me">Kariakoo, Msimbazi St</p>
+                  <p class="msg msg--eve">And where are you going?</p>
+                  <p class="msg msg--me">Mlimani City</p>
+                  <p class="msg msg--eve">1. Boda 3,500 TSh<br />2. Bajaji 5,000 TSh<br />3. Car 8,500 TSh<br />Reply 1, 2 or 3.</p>
+                  <p class="msg msg--me">1</p>
+                  <p class="msg msg--eve"><b>Boda confirmed.</b> Juma is 4 min away. Pay cash or M-Pesa.</p>
+                </div></div>
+              </div>
+            </div>
+            <p class="eve__note">Example conversation. Fares depend on distance.</p>
+          </div>
+        </section>
+
+        <section id="drive" class="drive">
+          <div class="drive__copy">
+            <p class="eyebrow">Drive with SasaRide</p>
+            <h2 class="drive__title"><span class="l">Go online.</span><span class="l l--blue">Get rides.</span></h2>
+            <div class="drive__stat"><span class="drive__num">85</span><span class="drive__pct">%</span><p>of every fare is yours.<br />Free to join.</p></div>
+            <p class="drive__lead">Boda, Bajaji or car - everyday rides, whenever you're online. Sign up in the same app, get verified and start taking trips.</p>
+            <ul class="drive__points">
+              <li><strong>Your hours</strong><span>Go online when it suits you. Go offline when it doesn't.</span></li>
+              <li><strong>Sasa Balance</strong><span>Your trip earnings collect in one place.</span></li>
+              <li><strong>Payouts</strong><span>To your mobile money on schedule, or on demand.</span></li>
+            </ul>
+            <a class="btn btn--blue magnetic" href="https://play.google.com/store/apps/details?id=co.tz.sasaride" target="_blank" rel="noopener"><span>Start driving</span></a>
+          </div>
+
+          <div class="drive__radar">
+            <button class="drive__toggle" type="button" aria-pressed="false" aria-label="Driver status">
+              <span class="drive__knob"></span><span class="drive__state">Offline</span>
+            </button>
+            <div class="drive__map" aria-hidden="true">
+              <svg class="drive__streets" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+                <path d="M-20 120 C 90 140, 160 60, 420 90" /><path d="M-20 300 C 120 260, 250 340, 420 280" />
+                <path d="M110 -20 C 140 120, 80 260, 130 420" /><path d="M290 -20 C 260 140, 330 250, 280 420" />
+                <path d="M-20 210 L 420 190" />
+              </svg>
+              <span class="drive__ring"></span><span class="drive__ring"></span><span class="drive__ring"></span>
+              <div class="drive__requests"></div>
+              <img class="drive__me" src="/img/boda_top.webp" alt="" width="512" height="512" />
+            </div>
+            <p class="drive__hint">Tap the switch to go online</p>
+          </div>
+        </section>
+
+        <section id="download" class="cta">
+          <div class="cta__road" aria-hidden="true"><img class="cta__car" src="/img/car_top.webp" alt="" width="512" height="512" /></div>
+          <h2 class="cta__title"><span>Your ride</span><span>is sasa.</span></h2>
+          <p class="cta__lead">Get SasaRide on your phone. Riding, sending a parcel or driving and earning - it all starts here.</p>
+          <div class="cta__btns">
+            <a class="btn btn--white magnetic" href="https://apps.apple.com/tz/app/sasaride/id6749956540" target="_blank" rel="noopener"><span>Download for iPhone</span></a>
+            <a class="btn btn--outline-white magnetic" href="https://play.google.com/store/apps/details?id=co.tz.sasaride" target="_blank" rel="noopener"><span>Get it on Android</span></a>
+          </div>
+          <footer class="foot">
+            <img src="/img/sasaride-wordmark-white.webp" alt="SasaRide" width="377" height="127" />
+            <nav aria-label="Legal">
+              <a href="https://sasaride.ai/legal/terms/">Terms</a>
+              <a href="https://sasaride.ai/legal/privacy/">Privacy</a>
+            </nav>
+            <p>© 2026 SasaRide · Tanzania</p>
+            <p class="foot__credits">3D models (CC BY 4.0):
+              <a href="https://sketchfab.com/3d-models/2014-toyota-corolla-e180-eu-with-interior-36f95efb0585464cae43a25a3b3392e8" target="_blank" rel="noopener">2014 Toyota Corolla</a> by Armored Wave ·
+              <a href="https://sketchfab.com/3d-models/125cc-naked-motorcycle-c8c2a4c00c464c99969b1fc7503b14d2" target="_blank" rel="noopener">125cc Naked Motorcycle</a> by Peter Tilley ·
+              <a href="https://sketchfab.com/3d-models/tuk-tuk-rikshaw-0bdfdf97a0f248008806840f7188367c" target="_blank" rel="noopener">Tuk Tuk Rikshaw</a> by alnmathew ·
+              <a href="https://sketchfab.com/3d-models/low-poly-2013-toyota-hiace-f83b4ed4d8534efb81def77b6c1b642d" target="_blank" rel="noopener">Low Poly 2013 Toyota HiAce</a> by Alvin.Woodly ·
+              <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">licence</a>. Compressed for web.</p>
+          </footer>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
